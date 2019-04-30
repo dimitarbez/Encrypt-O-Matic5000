@@ -21,6 +21,9 @@
     <ClInclude Include="encryptor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="decryptor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="encryptor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="decryptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

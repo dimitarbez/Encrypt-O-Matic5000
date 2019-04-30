@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="decryptor.h" />
     <ClInclude Include="encryptor.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="decryptor.cpp" />
     <ClCompile Include="Encrypt-O-Matic5000.cpp" />
     <ClCompile Include="encryptor.cpp" />
     <ClCompile Include="pch.cpp">
