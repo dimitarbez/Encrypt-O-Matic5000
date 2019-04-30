@@ -9,9 +9,10 @@ class decryptor
 {
 public:
 	void PrintString();
-	std::string ReadFromFile();
+	void ReadFromFile();
 	void SetFileName();
 	void SetDecryptedString(std::string);
+	void SetDecryptKey(int);
 	std::string GetFileName() const;
 	decryptor();
 	~decryptor();

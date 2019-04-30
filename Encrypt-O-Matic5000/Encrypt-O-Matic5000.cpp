@@ -4,8 +4,10 @@
 #include "pch.h"
 #include <iostream>
 #include "encryptor.h"
+#include "decryptor.h"
 
 encryptor enc;
+decryptor dec;
 std::string inputStr;
 int key;
 
@@ -39,6 +41,13 @@ int main()
 			enc.SetInput(inputStr);
 			
 			break;
+
+		case MenuSelect::decrypt:
+			std::cout << "Enter key for decryption: ";
+			std::cin >> key;
+			dec.SetDecryptKey(key);
+			dec.ReadFromFile();
+			break;
 		default:
 			break;
 		}
@@ -51,6 +60,10 @@ MenuSelect MenuSelector(std::string input)
 	if (input == "1")
 	{
 		return MenuSelect::encrypt;
+	}
+	else if (input == "2")
+	{
+		return MenuSelect::decrypt;
 	}
 	else
 	{
