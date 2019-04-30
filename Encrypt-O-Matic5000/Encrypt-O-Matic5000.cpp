@@ -3,10 +3,16 @@
 
 #include "pch.h"
 #include <iostream>
+#include "encryptor.h"
 
 int main()
-{
-    std::cout << "Hello World!\n"; 
+{	
+	std::string input;
+	do
+	{
+
+	} while (input != "Q" && input != "q");
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
