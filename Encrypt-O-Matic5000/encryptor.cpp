@@ -8,6 +8,7 @@ void encryptor::Encrypt(std::string& inputString)
 	{
 		c += GetKey();
 	}
+	WriteToFile(inputString);
 }
 
 void encryptor::WriteToFile(std::string& outString)
@@ -32,6 +33,7 @@ void encryptor::GetUserInput()
 void encryptor::SetInput(std::string inputStr)
 {
 	input = inputStr;
+	Encrypt(input);
 }
 
 std::string encryptor::GetInput() const

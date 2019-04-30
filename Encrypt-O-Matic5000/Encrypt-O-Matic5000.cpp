@@ -5,23 +5,56 @@
 #include <iostream>
 #include "encryptor.h"
 
+encryptor enc;
+std::string inputStr;
+int key;
+
+enum MenuSelect
+{
+	encrypt,
+	decrypt,
+	error
+};
+
+MenuSelect MenuSelector(std::string input);
+
 int main()
 {	
-	std::string input;
+	MenuSelect sel;
 	do
 	{
+		std::cout << "Encrypt or Decrypt?" << std::endl;
 
-	} while (input != "Q" && input != "q");
+		std::cin >> inputStr;
+		sel = MenuSelector(inputStr);
+		switch (sel)
+		{
+		case MenuSelect::encrypt:
+			enc.Introduction();
+			std::cout << "Enter the key: ";
+			std::cin >> key;
+			enc.SetKey(key);
+			std::cout << "Enter the string: ";
+			std::cin >> inputStr;
+			enc.SetInput(inputStr);
+			
+			break;
+		default:
+			break;
+		}
+	} while (sel != MenuSelect::error);
 
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+MenuSelect MenuSelector(std::string input)
+{
+	if (input == "1")
+	{
+		return MenuSelect::encrypt;
+	}
+	else
+	{
+		return MenuSelect::error;
+	}	
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
